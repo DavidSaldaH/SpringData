@@ -3,7 +3,7 @@
 <head th:fragment="head">
 <meta charset="UTF-8" />
 <title th:text="'SPRINGBOOT' + ${titulo}">Insert title here</title>
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
 	<header th:fragment="header">
@@ -27,12 +27,16 @@
 				</form>
 			</div>
 		</nav>
+		<div class="alert aler-success" th:if="${success != null}" th:text="${success}"></div>
+		<div class="alert aler-danger" th:if="${error != null}" th:text="${error}"></div>
+		<div class="alert aler-warning" th:if="${warning != null}" th:text="${warning}"></div>
+		<div class="alert aler-info" th:if="${info != null}" th:text="${info}"></div>
 	</header>
 	<div class="container"></div>
 	<footer th:fragment="footer" class="container">
 		<hr />
 		<div class="card" style="width: 15rem;">
-				<img class="card-img-top" th:src="@{/images/Rocket-League-Logo.png}" alt="Card image cap">
+			<img class="card-img-top" th:src="@{/images/Rocket-League-Logo.png}" alt="Card image cap">
 			<p>
 				Powered by <a href="https://spring.io/projects/spring-boot">Spring Boot</a> y <a href="https://www.thymeleaf.org/">Thymeleaf</a>
 			</p>
